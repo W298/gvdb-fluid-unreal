@@ -11,7 +11,7 @@ NVDIA GVDB Library Implementation to UE5
 
 ## INSTALLATION
 
-1. Move to `GVDB_Library\src`
+1. Move to `GVDB_Library/src`
 2. Modify macro of `gvdb_allocator.h`, `gvdb_volume_gvdb.h` to below
 
 ```cpp
