@@ -1,10 +1,6 @@
 # Visual Studio 2015 user specific files
 .vs/
-GVDB_Library/build/.vs
-GVDB_Library/build/x64
-GVDB_Library/build/gvdb.dir
-GVDB_Library/build/gvdbPTX.dir
-GVDB_Library/build/CMakeFiles
+GVDB_Library/build/
 
 # Compiled Object files
 *.slo
