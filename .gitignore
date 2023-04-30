@@ -2,6 +2,8 @@
 .vs/
 GVDB_Library/build/
 
+*.sln
+
 # Compiled Object files
 *.slo
 *.lo
@@ -15,7 +17,6 @@ GVDB_Library/build/
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Fortran module files
 *.mod
@@ -24,10 +25,6 @@ GVDB_Library/build/
 *.lai
 *.la
 *.a
-*.lib
-
-!gvdb.dll
-!gvdb.lib
 
 # Executables
 *.exe
