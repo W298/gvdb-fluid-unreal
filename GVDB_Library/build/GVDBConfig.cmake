@@ -51,73 +51,73 @@ add_library(gvdb SHARED IMPORTED)
 
 set_target_properties(gvdb PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX=\"cuda_gvdb_copydata.ptx\";CUDA_GVDB_MODULE_PTX=\"cuda_gvdb_module.ptx\""
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.1/include;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels"
-  INTERFACE_LINK_LIBRARIES "opengl32;glu32;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.1/lib/x64/cuda.lib"
-  INTERFACE_SOURCES "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/app_perf.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_allocator.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_camera.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_cutils.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_model.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_node.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_render.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_scene.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_types.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_vec.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_volume_3D.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_volume_base.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/gvdb_volume_gvdb.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/loader_ObjarReader.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/loader_OBJReader.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/loader_Parser.h;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/src/string_helper.h"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.2/include;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels"
+  INTERFACE_LINK_LIBRARIES "opengl32;glu32;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.2/lib/x64/cuda.lib"
+  INTERFACE_SOURCES "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/app_perf.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_allocator.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_camera.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_cutils.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_model.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_node.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_render.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_scene.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_types.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_vec.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_volume_3D.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_volume_base.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/gvdb_volume_gvdb.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/loader_ObjarReader.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/loader_OBJReader.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/loader_Parser.h;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/src/string_helper.h"
 )
 
 # Create imported target gvdbPTX
 add_library(gvdbPTX OBJECT IMPORTED)
 
 set_target_properties(gvdbPTX PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels"
-  INTERFACE_SOURCES "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_dda.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_geom.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_nodes.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_operators.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_particles.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_raycast.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_scene.cuh;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/kernels/cuda_math.cuh"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels"
+  INTERFACE_SOURCES "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_dda.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_geom.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_nodes.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_operators.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_particles.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_raycast.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_gvdb_scene.cuh;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/kernels/cuda_math.cuh"
 )
 
 # Import target "gvdb" for configuration "Debug"
 set_property(TARGET gvdb APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(gvdb PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Debug/gvdb.lib"
-  IMPORTED_LOCATION_DEBUG "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Debug/gvdb.dll"
+  IMPORTED_IMPLIB_DEBUG "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/Debug/gvdb.lib"
+  IMPORTED_LOCATION_DEBUG "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/Debug/gvdb.dll"
   )
 
 # Import target "gvdbPTX" for configuration "Debug"
 set_property(TARGET gvdbPTX APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(gvdbPTX PROPERTIES
   IMPORTED_COMMON_LANGUAGE_RUNTIME_DEBUG ""
-  IMPORTED_OBJECTS_DEBUG "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Debug/cuda_gvdb_copydata.ptx;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Debug/cuda_gvdb_module.ptx"
+  IMPORTED_OBJECTS_DEBUG "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Debug/cuda_gvdb_copydata.ptx;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Debug/cuda_gvdb_module.ptx"
   )
 
 # Import target "gvdb" for configuration "Release"
 set_property(TARGET gvdb APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(gvdb PROPERTIES
-  IMPORTED_IMPLIB_RELEASE "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Release/gvdb.lib"
-  IMPORTED_LOCATION_RELEASE "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Release/gvdb.dll"
+  IMPORTED_IMPLIB_RELEASE "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/Release/gvdb.lib"
+  IMPORTED_LOCATION_RELEASE "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/Release/gvdb.dll"
   )
 
 # Import target "gvdbPTX" for configuration "Release"
 set_property(TARGET gvdbPTX APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(gvdbPTX PROPERTIES
   IMPORTED_COMMON_LANGUAGE_RUNTIME_RELEASE ""
-  IMPORTED_OBJECTS_RELEASE "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Release/cuda_gvdb_copydata.ptx;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Release/cuda_gvdb_module.ptx"
+  IMPORTED_OBJECTS_RELEASE "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Release/cuda_gvdb_copydata.ptx;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/Release/cuda_gvdb_module.ptx"
   )
 
 # Import target "gvdb" for configuration "MinSizeRel"
 set_property(TARGET gvdb APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
 set_target_properties(gvdb PROPERTIES
-  IMPORTED_IMPLIB_MINSIZEREL "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/MinSizeRel/gvdb.lib"
-  IMPORTED_LOCATION_MINSIZEREL "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/MinSizeRel/gvdb.dll"
+  IMPORTED_IMPLIB_MINSIZEREL "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/MinSizeRel/gvdb.lib"
+  IMPORTED_LOCATION_MINSIZEREL "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/MinSizeRel/gvdb.dll"
   )
 
 # Import target "gvdbPTX" for configuration "MinSizeRel"
 set_property(TARGET gvdbPTX APPEND PROPERTY IMPORTED_CONFIGURATIONS MINSIZEREL)
 set_target_properties(gvdbPTX PROPERTIES
   IMPORTED_COMMON_LANGUAGE_RUNTIME_MINSIZEREL ""
-  IMPORTED_OBJECTS_MINSIZEREL "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/MinSizeRel/cuda_gvdb_copydata.ptx;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/MinSizeRel/cuda_gvdb_module.ptx"
+  IMPORTED_OBJECTS_MINSIZEREL "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/MinSizeRel/cuda_gvdb_copydata.ptx;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/MinSizeRel/cuda_gvdb_module.ptx"
   )
 
 # Import target "gvdb" for configuration "RelWithDebInfo"
 set_property(TARGET gvdb APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
 set_target_properties(gvdb PROPERTIES
-  IMPORTED_IMPLIB_RELWITHDEBINFO "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/RelWithDebInfo/gvdb.lib"
-  IMPORTED_LOCATION_RELWITHDEBINFO "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/RelWithDebInfo/gvdb.dll"
+  IMPORTED_IMPLIB_RELWITHDEBINFO "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/RelWithDebInfo/gvdb.lib"
+  IMPORTED_LOCATION_RELWITHDEBINFO "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/RelWithDebInfo/gvdb.dll"
   )
 
 # Import target "gvdbPTX" for configuration "RelWithDebInfo"
 set_property(TARGET gvdbPTX APPEND PROPERTY IMPORTED_CONFIGURATIONS RELWITHDEBINFO)
 set_target_properties(gvdbPTX PROPERTIES
   IMPORTED_COMMON_LANGUAGE_RUNTIME_RELWITHDEBINFO ""
-  IMPORTED_OBJECTS_RELWITHDEBINFO "C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/RelWithDebInfo/cuda_gvdb_copydata.ptx;C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/RelWithDebInfo/cuda_gvdb_module.ptx"
+  IMPORTED_OBJECTS_RELWITHDEBINFO "C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/RelWithDebInfo/cuda_gvdb_copydata.ptx;C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/build/gvdbPTX.dir/RelWithDebInfo/cuda_gvdb_module.ptx"
   )
 
 # This file does not depend on other imported targets which have

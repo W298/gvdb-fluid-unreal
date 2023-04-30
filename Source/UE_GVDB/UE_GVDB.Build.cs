@@ -35,5 +35,13 @@ public class UE_GVDB : ModuleRules
 		PublicAdditionalLibraries.Add(Path.Combine(CUDAPath, CUDALibraryPath, "cudadevrt.lib"));
 		PublicAdditionalLibraries.Add(Path.Combine(CUDAPath, CUDALibraryPath, "cudart.lib"));
 		PublicAdditionalLibraries.Add(Path.Combine(CUDAPath, CUDALibraryPath, "cudart_static.lib"));
+
+		const string OptixPath = "C:/ProgramData/NVIDIA Corporation/OptiX SDK 6.5.0";
+		const string OptixIncludePath = "include";
+		const string OptixLibraryPath = "lib64";
+
+		PublicIncludePaths.Add(Path.Combine(OptixPath, OptixIncludePath));
+		PublicAdditionalLibraries.Add(Path.Combine(OptixPath, OptixLibraryPath, "optix.6.5.0.lib"));
+		PublicAdditionalLibraries.Add(Path.Combine(OptixPath, OptixLibraryPath, "optixu.6.5.0.lib"));
 	}
 }

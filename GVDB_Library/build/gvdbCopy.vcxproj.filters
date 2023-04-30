@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\d888d626583bc6c72c3e98bdb41f502b\copiedPTX.stamp.rule">
+    <CustomBuild Include="C:\Users\lutca\unreal_project\UE_GVDB\GVDB_Library\build\CMakeFiles\5c1b61fdf9aeba7322374a0216e13eec\copiedPTX.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\d888d626583bc6c72c3e98bdb41f502b\copiedShaders.stamp.rule">
+    <CustomBuild Include="C:\Users\lutca\unreal_project\UE_GVDB\GVDB_Library\build\CMakeFiles\5c1b61fdf9aeba7322374a0216e13eec\copiedShaders.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\f1be28f02835d016bf2ea9f0eb8c7177\gvdbCopy.rule">
+    <CustomBuild Include="C:\Users\lutca\unreal_project\UE_GVDB\GVDB_Library\build\CMakeFiles\2bc79843e5a3381628333e2a6030be35\gvdbCopy.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\lutca\unreal_project\UE_GVDB\GVDB_Library\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\gvdbCopy" />
+    <None Include="C:\Users\lutca\unreal_project\UE_GVDB\GVDB_Library\build\CMakeFiles\gvdbCopy" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{89100203-B9B7-3342-9F75-1A88D5B698CE}</UniqueIdentifier>
+      <UniqueIdentifier>{1C9EB2E5-DB5C-39C6-82EF-388FD6575697}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
