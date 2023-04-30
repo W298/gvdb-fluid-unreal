@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{93174506-C13D-38AF-98D6-2D4C03A33C66}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>gvdb</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.1.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gvdb.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gvdb</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)..\lib</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gvdb.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gvdb</TargetName>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gvdb.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">gvdb</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gvdb.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">gvdb</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="Debug";gvdb_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX=\"cuda_gvdb_copydata.ptx\";CUDA_GVDB_MODULE_PTX=\"cuda_gvdb_module.ptx\";CMAKE_INTDIR=\"Debug\";gvdb_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="Debug";gvdb_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Xcompiler="/EHsc -Zi -Ob0"</AdditionalOptions>
+      <CodeGeneration>
+      </CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>Od</Optimization>
+      <Runtime>MDd</Runtime>
+      <RuntimeChecks>RTC1</RuntimeChecks>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+      <Warning>W3</Warning>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Debug/gvdb.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Debug/gvdb.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="Release";gvdb_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX=\"cuda_gvdb_copydata.ptx\";CUDA_GVDB_MODULE_PTX=\"cuda_gvdb_module.ptx\";CMAKE_INTDIR=\"Release\";gvdb_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="Release";gvdb_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Xcompiler="/EHsc -Ob2"</AdditionalOptions>
+      <CodeGeneration>
+      </CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+      <Warning>W3</Warning>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Release/gvdb.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/Release/gvdb.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="MinSizeRel";gvdb_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX=\"cuda_gvdb_copydata.ptx\";CUDA_GVDB_MODULE_PTX=\"cuda_gvdb_module.ptx\";CMAKE_INTDIR=\"MinSizeRel\";gvdb_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="MinSizeRel";gvdb_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Xcompiler="/EHsc -Ob1"</AdditionalOptions>
+      <CodeGeneration>
+      </CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O1</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+      <Warning>W3</Warning>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/MinSizeRel/gvdb.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/MinSizeRel/gvdb.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="RelWithDebInfo";gvdb_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX=\"cuda_gvdb_copydata.ptx\";CUDA_GVDB_MODULE_PTX=\"cuda_gvdb_module.ptx\";CMAKE_INTDIR=\"RelWithDebInfo\";gvdb_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <CudaCompile>
+      <Include>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(Include)</Include>
+      <Defines>%(Defines);_WINDOWS;NDEBUG;BUILD_OPENGL;GVDB_EXPORTS;GLEW_STATIC;CUDA_GVDB_COPYDATA_PTX="cuda_gvdb_copydata.ptx";CUDA_GVDB_MODULE_PTX="cuda_gvdb_module.ptx";CMAKE_INTDIR="RelWithDebInfo";gvdb_EXPORTS</Defines>
+      <AdditionalOptions>%(AdditionalOptions) -Xcompiler="/EHsc -Zi -Ob1"</AdditionalOptions>
+      <CodeGeneration>
+      </CodeGeneration>
+      <CompileOut>$(IntDir)%(Filename).obj</CompileOut>
+      <CudaRuntime>Static</CudaRuntime>
+      <GPUDebugInfo>false</GPUDebugInfo>
+      <Optimization>O2</Optimization>
+      <Runtime>MD</Runtime>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <TypeInfo>true</TypeInfo>
+      <UseHostInclude>false</UseHostInclude>
+      <Warning>W3</Warning>
+    </CudaCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64\cuda.lib;cudadevrt.lib;cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/RelWithDebInfo/gvdb.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/RelWithDebInfo/gvdb.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <CudaLink>
+      <AdditionalOptions>-forward-unknown-to-host-compiler -Wno-deprecated-gpu-targets </AdditionalOptions>
+      <PerformDeviceLink>false</PerformDeviceLink>
+    </CudaLink>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library -BC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build --check-stamp-file C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCUDACompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeSystem.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\cmake\FindGLEW.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library -BC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build --check-stamp-file C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCUDACompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeSystem.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\cmake\FindGLEW.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library -BC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build --check-stamp-file C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCUDACompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeSystem.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\cmake\FindGLEW.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library -BC:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build --check-stamp-file C:/Users/lutca/source/repos/GVDB_Project/UE_GVDB/GVDB_Library/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCUDAInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Compiler\NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows-NVIDIA-CUDA.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCUDACompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\3.26.3\CMakeSystem.cmake;C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\cmake\FindGLEW.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\dummy.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\app_perf.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_allocator.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_camera.cpp" />
+    <CudaCompile Include="..\src\gvdb_cutils.cu" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_model.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_node.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_render_opengl.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_scene.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_types.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_vec.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_volume_3D.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_volume_base.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_volume_gvdb.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\loader_ObjarReader.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\loader_OBJReader.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\loader_Parser.cpp" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\string_helper.cpp" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\app_perf.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_allocator.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_camera.h" />
+    <None Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_cutils.cuh">
+    </None>
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_model.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_node.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_render.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_scene.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_types.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_vec.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_volume_3D.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_volume_base.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\gvdb_volume_gvdb.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\loader_ObjarReader.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\loader_OBJReader.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\loader_Parser.h" />
+    <ClInclude Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\src\string_helper.h" />
+    <ClCompile Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\glew\src\glew.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\ZERO_CHECK.vcxproj">
+      <Project>{82CBEE33-0DE2-3E26-BE83-CEE5F8F4F144}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 12.1.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\lutca\source\repos\GVDB_Project\UE_GVDB\GVDB_Library\build\CMakeFiles\f1be28f02835d016bf2ea9f0eb8c7177\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{89100203-B9B7-3342-9F75-1A88D5B698CE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
