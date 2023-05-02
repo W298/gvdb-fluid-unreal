@@ -527,6 +527,9 @@
 			// Gets a pointer to the volume's ScnInfo struct
 			char* getScnInfo()				{ return (char*) &mScnInfo; }			
 
+			VDBInfo getVDBInfoStruct() { return mVDBInfo; }
+			ScnInfo getScnInfoStruct() { return mScnInfo; }
+
 			// Data Operations
 			void CleanAux(int id);
 			void CleanAux();

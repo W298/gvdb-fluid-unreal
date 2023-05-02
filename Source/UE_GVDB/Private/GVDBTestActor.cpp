@@ -15,13 +15,27 @@ AGVDBTestActor::AGVDBTestActor()
 void AGVDBTestActor::BeginPlay()
 {
 	Super::BeginPlay();
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, GVDBTestFunc() ? "True" : "False");
+	if (!GVDBInit())
+	{
+		AddToBuffer(lastErrorMsg, FColor::Red);
+	}
+	else
+	{
+		AddToBuffer("GVDB Volume Init Success!", FColor::Green);
+		AddToBuffer("", FColor::Cyan);
+		updateIndex = AddToBuffer(FString::Printf(TEXT("Render volume. %6.3f ms"), 0.0f), FColor::Cyan);
+	}
 }
 
 // Called every frame
 void AGVDBTestActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	GVDBRender();
 
+	for (int i = logCursor - 1; i >= 0; i--)
+	{
+		PrintMsg(logBuffer[i], logColor[i]);
+	}
 }
 
