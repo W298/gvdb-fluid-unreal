@@ -12,20 +12,21 @@ NVDIA GVDB Library Implementation to UE5
 ## INSTALLATION
 
 1. Move to `GVDB_Library/src`
-2. Modify macro of `gvdb_allocator.h`, `gvdb_volume_gvdb.h` to below
+2. Modify macro of `env.h` to below
 
 ```cpp
-// GVDB_Library/src/gvdb_allocator.h
+// GVDB_Library/src/env.h
+#ifndef CUDA_GVDB_COPYDATA_PTX_PATH
+	#define	CUDA_GVDB_COPYDATA_PTX_PATH     "{PATH_TO_PTX_FOLDER}/cuda_gvdb_copydata.ptx"
+#endif
 
-// PTX module path
-#define	CUDA_GVDB_COPYDATA_PTX_CUSTOM		"{PATH_TO_PTX_FOLDER}/cuda_gvdb_copydata.ptx"
-```
+#ifndef CUDA_GVDB_MODULE_PTX_PATH
+	#define	CUDA_GVDB_MODULE_PTX_PATH       "{PATH_TO_PTX_FOLDER}/cuda_gvdb_module.ptx"
+#endif
 
-```cpp
-// GVDB_Library/src/gvdb_volume_gvdb.h
-
-// PTX module path
-#define	CUDA_GVDB_COPYDATA_PTX_CUSTOM		"{PATH_TO_PTX_FOLDER}/cuda_gvdb_module.ptx"
+#ifndef CUDA_FLUID_PTX_PATH
+	#define CUDA_FLUID_PTX_PATH             "{PATH_TO_PTX_FOLDER}/fluid_system_cuda.ptx"
+#endif
 ```
 
 > `{PATH_TO_PTX_FOLDER}` is located at `GVDB_Library/ptx`, but you should use absolute path
