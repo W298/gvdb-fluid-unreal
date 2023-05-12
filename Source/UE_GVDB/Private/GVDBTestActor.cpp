@@ -1,41 +1,62 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "GVDBTestActor.h"
 
-// Sets default values
 AGVDBTestActor::AGVDBTestActor()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
-// Called when the game starts or when spawned
+void AGVDBTestActor::PrintMsg(FString msg, FColor color)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 0, color, msg);
+}
+
+int AGVDBTestActor::AddToBuffer(FString msg, FColor color)
+{
+	logBuffer[logCursor] = msg;
+	logColor[logCursor++] = color;
+	return logCursor - 1;
+}
+
+void AGVDBTestActor::UpdateBuffer(int index, FString msg, FColor color)
+{
+	logBuffer[index] = msg;
+	logColor[index] = color;
+}
+
+bool AGVDBTestActor::InitFluidEmulator()
+{
+	return fluidEmulator.init(1000000);
+}
+
+void AGVDBTestActor::RenderFluidEmulation()
+{
+	const char* info = fluidEmulator.display(25);
+	UpdateBuffer(debugLogIndex, FString::Printf(TEXT("Particle %d %hs"), 25, info), FColor::Cyan);
+}
+
 void AGVDBTestActor::BeginPlay()
 {
 	Super::BeginPlay();
-	if (!GVDBInit())
+	if (!InitFluidEmulator())
 	{
+		lastErrorMsg = "Emulation Init Failed";
 		AddToBuffer(lastErrorMsg, FColor::Red);
 	}
 	else
 	{
-		AddToBuffer("GVDB Volume Init Success!", FColor::Green);
+		AddToBuffer("Start Emulation", FColor::Green);
 		AddToBuffer("", FColor::Cyan);
-		updateIndex = AddToBuffer(FString::Printf(TEXT("Render volume. %6.3f ms"), 0.0f), FColor::Cyan);
+		debugLogIndex = AddToBuffer(FString::Printf(TEXT("")), FColor::Cyan);
 	}
 }
 
-// Called every frame
 void AGVDBTestActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	GVDBRender();
+	RenderFluidEmulation();
 
 	for (int i = logCursor - 1; i >= 0; i--)
 	{
 		PrintMsg(logBuffer[i], logColor[i]);
 	}
 }
-

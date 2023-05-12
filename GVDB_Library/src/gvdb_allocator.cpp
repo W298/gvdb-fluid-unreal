@@ -20,6 +20,8 @@
 #include <cuda_runtime.h>
 #include <cuda.h>
 
+#include "env.h"
+
 using namespace nvdb;
 
 
@@ -33,7 +35,7 @@ Allocator::Allocator ()
 	mbDebug = false;
 	mVFBO[0] = -1;
 
-	cudaCheck ( cuModuleLoad ( &cuAllocatorModule, CUDA_GVDB_COPYDATA_PTX_CUSTOM), "Allocator", "Allocator", "cuModuleLoad", CUDA_GVDB_COPYDATA_PTX_CUSTOM, mbDebug);
+	cudaCheck ( cuModuleLoad ( &cuAllocatorModule, CUDA_GVDB_COPYDATA_PTX_PATH), "Allocator", "Allocator", "cuModuleLoad", CUDA_GVDB_COPYDATA_PTX_PATH, mbDebug);
 		
 	cudaCheck ( cuModuleGetFunction ( &cuFillTex,		cuAllocatorModule, "kernelFillTex" ), "Allocator", "Allocator", "cuModuleGetFunction", "cuFillTex",  mbDebug);
 	cudaCheck ( cuModuleGetFunction ( &cuCopyTexC,		cuAllocatorModule, "kernelCopyTexC" ), "Allocator", "Allocator", "cuModuleGetFunction", "cuCopyTexC", mbDebug);

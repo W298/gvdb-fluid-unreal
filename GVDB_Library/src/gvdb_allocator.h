@@ -16,9 +16,6 @@
 	#include <cuda.h>
 	using namespace nvdb;
 
-	// PTX module path
-	#define	CUDA_GVDB_COPYDATA_PTX_CUSTOM		"C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/ptx/cuda_gvdb_copydata.ptx"
-
 	// Maximum number of GVDB Pool levels
 	#define MAX_POOL		10
 

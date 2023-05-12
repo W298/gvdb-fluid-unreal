@@ -120,9 +120,6 @@
 		CUdeviceptr dbuf;		
 	};
 
-	// PTX module path
-	#define	CUDA_GVDB_MODULE_PTX_CUSTOM		"C:/Users/lutca/unreal_project/UE_GVDB/GVDB_Library/ptx/cuda_gvdb_module.ptx"	
-
 	// CUDA modules
 	#define MODL_PRIMARY			0
 
