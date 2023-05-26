@@ -70,7 +70,7 @@ void FluidEmulator::reconfigure()
 	}
 }
 
-const char* FluidEmulator::display(int p)
+Vector3DF* FluidEmulator::display()
 {
 	if (m_simulate)
 	{
@@ -79,7 +79,7 @@ const char* FluidEmulator::display(int p)
 		m_sample = 0;
 	}
 
-	return fluid.DrawParticleInfo(p);
+	return fluid.TransferParticlePosition();
 }
 
 void FluidEmulator::simulate()

@@ -1,62 +1,90 @@
 #include "GVDBTestActor.h"
 
-AGVDBTestActor::AGVDBTestActor()
-{
-	PrimaryActorTick.bCanEverTick = true;
-}
-
-void AGVDBTestActor::PrintMsg(FString msg, FColor color)
+void StringBuffer::PrintMsg(FString msg, FColor color)
 {
 	GEngine->AddOnScreenDebugMessage(-1, 0, color, msg);
 }
 
-int AGVDBTestActor::AddToBuffer(FString msg, FColor color)
+int StringBuffer::AddToBuffer(FString msg, FColor color)
 {
 	logBuffer[logCursor] = msg;
 	logColor[logCursor++] = color;
 	return logCursor - 1;
 }
 
-void AGVDBTestActor::UpdateBuffer(int index, FString msg, FColor color)
+void StringBuffer::UpdateBuffer(int index, FString msg, FColor color)
 {
 	logBuffer[index] = msg;
 	logColor[index] = color;
 }
 
-bool AGVDBTestActor::InitFluidEmulator()
+void StringBuffer::RenderBuffer()
 {
-	return fluidEmulator.init(1000000);
+	for (int i = logCursor - 1; i >= 0; i--)
+	{
+		PrintMsg(logBuffer[i], logColor[i]);
+	}
 }
 
-void AGVDBTestActor::RenderFluidEmulation()
+AGVDBTestActor::AGVDBTestActor()
 {
-	const char* info = fluidEmulator.display(25);
-	UpdateBuffer(debugLogIndex, FString::Printf(TEXT("Particle %d %hs"), 25, info), FColor::Cyan);
+	PrimaryActorTick.bCanEverTick = true;
+}
+
+bool AGVDBTestActor::InitFluidEmulator()
+{
+	return fluidEmulator.init(150000);
+}
+
+void AGVDBTestActor::FixedUpdate()
+{
+	stringBuffer.RenderBuffer();
+	RenderFluidEmulation();
+}
+
+TArray<FVector> AGVDBTestActor::GetRenderBuffer()
+{
+	return buffer;
 }
 
 void AGVDBTestActor::BeginPlay()
 {
 	Super::BeginPlay();
+
 	if (!InitFluidEmulator())
 	{
-		lastErrorMsg = "Emulation Init Failed";
-		AddToBuffer(lastErrorMsg, FColor::Red);
+		stringBuffer.lastErrorMsg = "Emulation Init Failed";
+		stringBuffer.AddToBuffer(stringBuffer.lastErrorMsg, FColor::Red);
 	}
 	else
 	{
-		AddToBuffer("Start Emulation", FColor::Green);
-		AddToBuffer("", FColor::Cyan);
-		debugLogIndex = AddToBuffer(FString::Printf(TEXT("")), FColor::Cyan);
+		stringBuffer.AddToBuffer("Start Emulation", FColor::Green);
+		stringBuffer.AddToBuffer("", FColor::Cyan);
+		stringBuffer.debugLogIndex = stringBuffer.AddToBuffer(FString::Printf(TEXT("")), FColor::Cyan);
+	}
+
+	RenderFluidEmulation();
+}
+
+void AGVDBTestActor::RenderFluidEmulation()
+{
+	buffer.Empty();
+
+	const Vector3DF* map = fluidEmulator.display();
+	for (int p = 0; p < fluidEmulator.m_numpnts; p++)
+	{
+		buffer.Add(FVector(map[p].x, map[p].z, map[p].z));
 	}
 }
 
 void AGVDBTestActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	RenderFluidEmulation();
 
-	for (int i = logCursor - 1; i >= 0; i--)
-	{
-		PrintMsg(logBuffer[i], logColor[i]);
-	}
+	elapsedTime += DeltaTime;
+	if (elapsedTime - prevTime < tickGap) return;
+
+	FixedUpdate();
+
+	prevTime = elapsedTime;
 }

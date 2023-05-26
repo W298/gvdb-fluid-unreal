@@ -8,7 +8,7 @@ class FluidEmulator
 public:
 	bool init(int numpnts = 1500000);
 	void reconfigure();
-	const char* display(int p = 20);
+	Vector3DF* display();
 	void simulate();
 
 	VolumeGVDB	gvdb;

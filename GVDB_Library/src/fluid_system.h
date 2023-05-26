@@ -164,6 +164,7 @@
 		const char* DrawParticleInfo ( int p );
 		void DrawNeighbors ( int p );
 		void DrawCircle ( Vector3DF pos, float r, Vector3DF clr, Camera3D& cam );
+		Vector3DF* TransferParticlePosition();
 
 		// Particle Utilities
 		void AllocateBuffer(int buf_id, int stride, int cpucnt, int gpucnt, int gpumode, int cpumode);		

@@ -1499,6 +1499,10 @@ void FluidSystem::DrawCircle ( Vector3DF pos, float r, Vector3DF clr, Camera3D& 
 	glPopMatrix ();
 }
 
+Vector3DF* FluidSystem::TransferParticlePosition()
+{
+	return m_Fluid.bufV3(FPOS);
+}
 
 void FluidSystem::DrawText ()
 {
@@ -2151,7 +2155,6 @@ int FluidSystem::SelectParticle ( int x, int y, int wx, int wy, Camera3D& cam )
 	return -1;
 }
 
-
 const char* FluidSystem::DrawParticleInfo ( int p )
 {
 	char disp[512];
@@ -2217,8 +2220,6 @@ const char* FluidSystem::DrawParticleInfo ( int p )
 
 	return disp;
 }
-
-
 
 void FluidSystem::SetupKernels ()
 {

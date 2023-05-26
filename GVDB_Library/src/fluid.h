@@ -116,7 +116,7 @@
 			inline CALLFUNC float3* bufF3(int n)		{ return (float3*) mcpu[n]; }
 			inline CALLFUNC float*  bufF (int n)		{ return (float*)  mcpu[n]; }
 			inline CALLFUNC uint*   bufI (int n)		{ return (uint*)   mcpu[n]; }
-			inline CALLFUNC char*   bufC (int n)		{ return (char*)   mcpu[n]; }				
+			inline CALLFUNC char*   bufC (int n)		{ return (char*)   mcpu[n]; }
 		#endif	
 
 		char* mcpu[MAX_BUF] = { nullptr };

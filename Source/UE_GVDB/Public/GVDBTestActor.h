@@ -5,11 +5,8 @@
 #include "GameFramework/Actor.h"
 #include "GVDBTestActor.generated.h"
 
-UCLASS()
-class UE_GVDB_API AGVDBTestActor : public AActor
+class StringBuffer
 {
-	GENERATED_BODY()
-	
 public:
 	FString logBuffer[1024];
 	FColor logColor[1024];
@@ -17,19 +14,40 @@ public:
 	int logCursor = 0;
 	int debugLogIndex = 0;
 
-	FluidEmulator fluidEmulator;
-
-	AGVDBTestActor();
-
 	static void PrintMsg(FString msg, FColor color);
 	int AddToBuffer(FString msg, FColor color);
 	void UpdateBuffer(int index, FString msg, FColor color);
+	void RenderBuffer();
+};
+
+UCLASS()
+class UE_GVDB_API AGVDBTestActor : public AActor
+{
+	GENERATED_BODY()
+	
+public:
+	StringBuffer stringBuffer;
+	FluidEmulator fluidEmulator;
+
+	TArray<FVector> buffer;
+
+	float prevTime;
+	float elapsedTime;
+	float tickGap = 0.02f;
+
+	AGVDBTestActor();
+
 	bool InitFluidEmulator();
-	void RenderFluidEmulation();
+	void FixedUpdate();
+
+	UFUNCTION(BlueprintCallable, Category = "FluidEmulation")
+	TArray<FVector> GetRenderBuffer();
 
 protected:
 	virtual void BeginPlay() override;
+	void RenderFluidEmulation();
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+	
 };
