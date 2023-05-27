@@ -1,6 +1,6 @@
-# GVDB Unreal
+# GVDB Fluid Unreal
 
-NVDIA GVDB Library Implementation to UE5
+NVDIA GVDB Library + Fluid Simulation Implementation to UE5
 
 ## REQUIREMENTS
 
