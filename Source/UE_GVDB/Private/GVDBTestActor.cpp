@@ -73,7 +73,7 @@ void AGVDBTestActor::RenderFluidEmulation()
 	const Vector3DF* map = fluidEmulator.display();
 	for (int p = 0; p < fluidEmulator.m_numpnts; p++)
 	{
-		buffer.Add(FVector(map[p].x, map[p].z, map[p].z));
+		buffer.Add(FVector(map[p].x, map[p].y, map[p].z));
 	}
 }
 
