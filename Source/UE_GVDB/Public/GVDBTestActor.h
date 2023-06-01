@@ -3,6 +3,10 @@
 #include "CoreMinimal.h"
 #include "fluid_emulator.h"
 #include "GameFramework/Actor.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraDataInterfaceArrayFunctionLibrary.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraComponent.h"
 #include "GVDBTestActor.generated.h"
 
 class StringBuffer
@@ -29,19 +33,31 @@ public:
 	StringBuffer stringBuffer;
 	FluidEmulator fluidEmulator;
 
-	TArray<FVector> buffer;
-
 	float prevTime;
 	float elapsedTime;
 	float tickGap = 0.02f;
+
+	int particleCnt = 500000;
+	int obsCnt = 3;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "FluidEmulation")
+	UStaticMeshComponent* SM0;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "FluidEmulation")
+	UStaticMeshComponent* SM1;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "FluidEmulation")
+	UStaticMeshComponent* SM2;
+
+	TArray<UStaticMeshComponent*> SMs;
 
 	AGVDBTestActor();
 
 	bool InitFluidEmulator();
 	void FixedUpdate();
 
-	UFUNCTION(BlueprintCallable, Category = "FluidEmulation")
-	TArray<FVector> GetRenderBuffer();
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "FluidEmulation")
+	UNiagaraComponent* NiagaraComponent;
 
 protected:
 	virtual void BeginPlay() override;

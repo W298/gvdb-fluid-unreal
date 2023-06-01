@@ -2,7 +2,7 @@
 
 using namespace nvdb;
 
-bool FluidEmulator::init(int numpnts)
+bool FluidEmulator::init(int numpnts, float3* obsMinAry, float3* obsMaxAry, int obsCnt)
 {
 	m_time = 0;
 	m_simulate = true;
@@ -37,6 +37,7 @@ bool FluidEmulator::init(int numpnts)
 	m_numpnts = numpnts;
 
 	fluid.Initialize();
+	fluid.AddObstacleInformation(obsMinAry, obsMaxAry, obsCnt);
 	fluid.Start(m_numpnts);
 
 	Vector3DF ctr = (fluid.GetGridMax() + fluid.GetGridMin()) * Vector3DF(0.5, 0.5, 0.5);

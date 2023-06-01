@@ -193,11 +193,11 @@ void FluidSystem::UpdateParams ()
 {
 	// Update Params on GPU
 	Vector3DF grav = m_Vec[PPLANE_GRAV_DIR] * m_Param[PGRAV];
-	FluidParamCUDA (  m_Param[PSIMSCALE], m_Param[PSMOOTHRADIUS], m_Param[PRADIUS], m_Param[PMASS], m_Param[PRESTDENSITY],
-					*(float3*)& m_Vec[PBOUNDMIN], *(float3*)& m_Vec[PBOUNDMAX], m_Param[PEXTSTIFF], m_Param[PINTSTIFF], 
-					m_Param[PVISC], m_Param[PEXTDAMP], m_Param[PFORCE_MIN], m_Param[PFORCE_MAX], m_Param[PFORCE_FREQ], 
-					m_Param[PGROUND_SLOPE], grav.x, grav.y, grav.z, m_Param[PACCEL_LIMIT], m_Param[PVEL_LIMIT], 
-					(int) m_Vec[PEMIT_RATE].x );
+	FluidParamCUDA(m_Param[PSIMSCALE], m_Param[PSMOOTHRADIUS], m_Param[PRADIUS], m_Param[PMASS], m_Param[PRESTDENSITY],
+		*(float3*)&m_Vec[PBOUNDMIN], *(float3*)&m_Vec[PBOUNDMAX], m_Param[PEXTSTIFF], m_Param[PINTSTIFF],
+		m_Param[PVISC], m_Param[PEXTDAMP], m_Param[PFORCE_MIN], m_Param[PFORCE_MAX], m_Param[PFORCE_FREQ],
+		m_Param[PGROUND_SLOPE], grav.x, grav.y, grav.z, m_Param[PACCEL_LIMIT], m_Param[PVEL_LIMIT],
+		(int)m_Vec[PEMIT_RATE].x, m_Ary[POBSMINARY], m_Ary[POBSMAXARY], (int)m_Param[POBSCNT]);
 }
 
 void FluidSystem::SetParam (int p, float v )
@@ -2352,6 +2352,20 @@ void FluidSystem::SetupExampleParams ()
 		m_Param [ PFORCE_MIN ] = 100.0f;	
 		m_Param [ PFORCE_FREQ ] = 6.0f;
 		m_Param [ PGROUND_SLOPE ] = 0.10f;
+
+		/*m_Param[POBSCNT] = 3;
+
+		m_Ary[POBSMINARY][0] = make_float3(200, 0, 200);
+		m_Ary[POBSMINARY][1] = make_float3(300, 0, 100);
+		m_Ary[POBSMINARY][2] = make_float3(300, 0, 150);
+
+		m_Ary[POBSMAXARY][0] = make_float3(250, 50, 250);
+		m_Ary[POBSMAXARY][1] = make_float3(325, 50, 125);
+		m_Ary[POBSMAXARY][2] = make_float3(325, 100, 175);
+
+		m_Param[PGRAV] = 3.5f;
+		m_Param[PVISC] = 1.50f;*/
+
 		break;
 	case 3:		// Small dam break
 		m_Vec [ PVOLMIN ].Set ( -40, 0, -40  );
@@ -2573,7 +2587,7 @@ void FluidSystem::FluidSetupCUDA ( int num, int gsrch, int3 res, float3 size, fl
 
 }
 
-void FluidSystem::FluidParamCUDA ( float ss, float sr, float pr, float mass, float rest, float3 bmin, float3 bmax, float estiff, float istiff, float visc, float damp, float fmin, float fmax, float ffreq, float gslope, float gx, float gy, float gz, float al, float vl, int emit )
+void FluidSystem::FluidParamCUDA(float ss, float sr, float pr, float mass, float rest, float3 bmin, float3 bmax, float estiff, float istiff, float visc, float damp, float fmin, float fmax, float ffreq, float gslope, float gx, float gy, float gz, float al, float vl, int emit, float3* obsMinAry, float3* obsMaxAry, int obsCnt)
 {
 	m_FParams.psimscale = ss;
 	m_FParams.psmoothradius = sr;
@@ -2607,6 +2621,10 @@ void FluidSystem::FluidParamCUDA ( float ss, float sr, float pr, float mass, flo
 	m_FParams.d2 = m_FParams.psimscale * m_FParams.psimscale;
 	m_FParams.rd2 = m_FParams.r2 / m_FParams.d2;
 	m_FParams.vterm = m_FParams.lapkern * m_FParams.pvisc;
+
+	memcpy(m_FParams.obsMinAry, obsMinAry, sizeof(m_FParams.obsMinAry));
+	memcpy(m_FParams.obsMaxAry, obsMaxAry, sizeof(m_FParams.obsMaxAry));
+	m_FParams.obsCnt = obsCnt;
 
 	// Transfer sim params to device
 	cuCheck ( cuMemcpyHtoD ( cuFParams,	&m_FParams,		sizeof(FParams) ), "FluidParamCUDA", "cuMemcpyHtoD", "cuFParams", mbDebug);
@@ -2752,6 +2770,20 @@ void FluidSystem::IntegrityCheck()
 				}
 		}
 	}
+}
+
+void FluidSystem::AddObstacleInformation(float3* obsMinAry, float3* obsMaxAry, int obsCnt)
+{
+	m_Param[POBSCNT] = obsCnt;
+
+	for (int i = 0; i < obsCnt; i++)
+	{
+		m_Ary[POBSMINARY][i] = obsMinAry[i];
+		m_Ary[POBSMAXARY][i] = obsMaxAry[i];
+	}
+
+	m_Param[PGRAV] = 3.5f;
+	m_Param[PVISC] = 1.50f;
 }
 
 void FluidSystem::CountingSortFullCUDA ( Vector3DF* ppos )

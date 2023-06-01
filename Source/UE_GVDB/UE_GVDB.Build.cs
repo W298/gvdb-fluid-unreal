@@ -11,7 +11,7 @@ public class UE_GVDB : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "OpenGL" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "OpenGL", "Niagara" });
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
 		const string GVDBIncludePath = "GVDB_Library/src";

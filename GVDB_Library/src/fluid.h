@@ -149,7 +149,9 @@
 	#define OFFSET_DENS		52
 	#define OFFSET_CELL		56
 	#define OFFSET_GCONT	60
-	#define OFFSET_CLR		64	
+	#define OFFSET_CLR		64
+
+	#define MAX_OBSCNT		32
 
 	// Fluid Parameters (stored on both host and device)
 	struct FParams {
@@ -178,6 +180,10 @@
 
 		int3			brickRes;
 		int				pemit;
+
+		float3			obsMinAry[MAX_OBSCNT];
+		float3			obsMaxAry[MAX_OBSCNT];
+		int				obsCnt;
 	};
 
 #endif /*PARTICLE_H_*/

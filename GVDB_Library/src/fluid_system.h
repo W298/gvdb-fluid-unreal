@@ -87,7 +87,8 @@
 	#define PTIME_RENDER		44
 	#define PTIME_TOGPU			45
 	#define PTIME_FROMGPU		46
-	#define PFORCE_FREQ			47	
+	#define PFORCE_FREQ			47
+	#define POBSCNT				48
 
 	// Vector params
 	#define PVOLMIN				0
@@ -102,7 +103,11 @@
 	#define PEMIT_SPREAD		9
 	#define PEMIT_RATE			10
 	#define PPOINT_GRAV_POS		11	
-	#define PPLANE_GRAV_DIR		12	
+	#define PPLANE_GRAV_DIR		12
+
+	// float3 array params
+	#define POBSMINARY			0
+	#define POBSMAXARY			1
 
 	// Booleans
 	#define PRUN				0
@@ -188,6 +193,7 @@
 		void SetupGrid ( Vector3DF min, Vector3DF max, float sim_scale, float cell_size, float border );		
 		void AllocateGrid ();
 		void IntegrityCheck();
+		void AddObstacleInformation(float3* obsMinAry, float3* obsMaxAry, int obsCnt);
 
 		// Neighbor Search
 		void Search ();
@@ -248,7 +254,7 @@
 		void ComputeForceGridNC ();				// O(cn) - neighbor table		
 
 		void FluidSetupCUDA (  int num, int gsrch, int3 res, float3 size, float3 delta, float3 gmin, float3 gmax, int total, int chk );
-		void FluidParamCUDA ( float ss, float sr, float pr, float mass, float rest, float3 bmin, float3 bmax, float estiff, float istiff, float visc, float damp, float fmin, float fmax, float ffreq, float gslope, float gx, float gy, float gz, float al, float vl, int emit );
+		void FluidParamCUDA(float ss, float sr, float pr, float mass, float rest, float3 bmin, float3 bmax, float estiff, float istiff, float visc, float damp, float fmin, float fmax, float ffreq, float gslope, float gx, float gy, float gz, float al, float vl, int emit, float3* obsMinAry, float3* obsMaxAry, int obsCnt);
 
 		void InsertParticlesCUDA ( uint* gcell, uint* ccell, uint* gcnt );	
 		void PrefixSumCellsCUDA ( uint* goff, int zero_offsets );		
@@ -330,6 +336,7 @@
 		// Simulation Parameters
 		float						m_Param [ MAX_PARAM ];			// see defines above
 		Vector3DF					m_Vec [ MAX_PARAM ];
+		float3						m_Ary[MAX_PARAM][MAX_OBSCNT];
 		bool						m_Toggle [ MAX_PARAM ];		
 
 		// SPH Kernel functions

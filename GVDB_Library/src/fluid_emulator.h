@@ -6,7 +6,7 @@
 class FluidEmulator
 {
 public:
-	bool init(int numpnts = 1500000);
+	bool init(int numpnts, float3* obsMinAry, float3* obsMaxAry, int obsCnt);
 	void reconfigure();
 	Vector3DF* display();
 	void simulate();
