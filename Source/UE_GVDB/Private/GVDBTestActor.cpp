@@ -50,27 +50,14 @@ bool AGVDBTestActor::InitFluidEmulator()
 	int i = 0;
 	for (UStaticMeshComponent* SM : SMs)
 	{
-		FVector relativePosition = SM->GetRelativeLocation();
+		const FVector relativePosition = SM->GetRelativeLocation();
 		const FVector relativeScale = SM->GetRelativeScale3D();
 
-		const FVector simScale = FVector(400, 400, 200);
-		const FVector realScale = FVector(simScale.X * relativeScale.X, simScale.Y * relativeScale.Y, simScale.Z * relativeScale.Z);
-
-		const float mul = 2.8f;
-
-		obsMaxAry[i] = make_float3(relativePosition.X + relativeScale.X * 125, relativePosition.Z + relativeScale.Z * 125, relativePosition.Y + relativeScale.Y * 125);
-		obsMinAry[i] = make_float3(relativePosition.X - relativeScale.X * 125, relativePosition.Z - relativeScale.Z * 125, relativePosition.Y - relativeScale.Y * 125);
+		obsMaxAry[i] = make_float3(relativePosition.X + relativeScale.X * 125, relativePosition.Z + relativeScale.Z * 125 - relativeScale.Z * 125 * 2.35f, relativePosition.Y + relativeScale.Y * 125);
+		obsMinAry[i] = make_float3(relativePosition.X - relativeScale.X * 125, relativePosition.Z - relativeScale.Z * 125 - relativeScale.Z * 125 * 2.35f, relativePosition.Y - relativeScale.Y * 125);
 
 		i++;
 	}
-
-	/*obsMinAry[0] = make_float3(200, 0, 200);
-	obsMinAry[1] = make_float3(300, 0, 100);
-	obsMinAry[2] = make_float3(300, 0, 150);
-
-	obsMaxAry[0] = make_float3(250, 50, 250);
-	obsMaxAry[1] = make_float3(325, 50, 125);
-	obsMaxAry[2] = make_float3(325, 100, 175);*/
 
 	return fluidEmulator.init(particleCnt, obsMinAry, obsMaxAry, obsCnt);
 }
