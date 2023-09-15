@@ -33,6 +33,22 @@ if(NOT DEFINED CMAKE_CUDA_STANDARD)
     set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 endif()
 
+set(COPYDATA_PTX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/ptx/cuda_gvdb_copydata.ptx")
+set(MODULE_PTX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/ptx/cuda_gvdb_module.ptx")
+set(FLUID_PTX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/ptx/fluid_system_cuda.ptx")
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/env.h.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/env.h"
+)
+
+set(CUDA_PATH_BUILD "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.2" CACHE STRING "CUDA Path for Unreal Build")
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/../Source/UE_GVDB/UE_GVDB.Build.cs.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/../Source/UE_GVDB/UE_GVDB.Build.cs"
+)
+
 # Compile a couple of source files into a PTX object library.
 # Creates an object library target named gvdbPTX.
 set(GVDB_PTX_SOURCE_FILES "kernels/cuda_gvdb_copydata.cu" "kernels/cuda_gvdb_module.cu")
