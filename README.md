@@ -1,15 +1,26 @@
-# GVDB Fluid Unreal
+![header](https://github.com/W298/gvdb-fluid-unreal/assets/25034289/b1602e50-394c-4a1b-af73-fcec15ba99a9)
 
-NVDIA GVDB Library + Fluid Simulation Implementation to UE5
+# gvdb-fluid-unreal
 
-## REQUIREMENTS
+## About this repository
+
+Implement Fluid Simulation (FLIP) on Unreal Engine 5 with NVIDIA GVDB Library.  
+The particles are simulated with a Niagara system.
+
+> Reference Paper
+> - [Fast Fluid Simulations with Sparse Volumes on the GPU](https://www.researchgate.net/publication/325488464_Fast_Fluid_Simulations_with_Sparse_Volumes_on_the_GPU)
+> - https://people.csail.mit.edu/kuiwu/gvdb_sim.html
+
+## Requirements
 
 - NVIDIA Kepler generation or later GPU
-- **CUDA Toolkit 6.5 or higher (Toolkit 10.2 recommended)**
-- **Optix 6.5.0**
+- **CUDA Toolkit 6.5 or later (Toolkit 10.2 recommended)**
+- **Visual Studio 16 2019 or later**
 - CMake 3.10 or later
 
-## INSTALLATION
+Tested on CUDA Toolkit 10.2 & Visual Studio 16 2019 only. Other versions may not work properly.
+
+## Installation Guide
 
 ### 1. BUILD
 
