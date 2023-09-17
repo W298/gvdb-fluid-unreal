@@ -5,8 +5,8 @@
   - [2. Collision Handling](#2-collision-handling)
   - [3. Rendering Particle](#3-rendering-particle)
 - [Particle Renderer](#particle-renderer)
-  - [Sprite Renderer](#sprite-renderer)
-  - [Mesh Renderer](#mesh-renderer)
+  - [Sprite Renderer Example](#sprite-renderer-example)
+  - [Mesh Renderer Example](#mesh-renderer-example)
 
 ## 구현
 
@@ -164,6 +164,16 @@ Niagara System 에서 받은 Vector 정보들을 실제로 Rendering 하기 위�
 
 ## Particle Renderer
 
-### Sprite Renderer
+`Sprite Renderer`, `Mesh Renderer` 두 가지 Renderer 를 이용해 렌더링을 진행하였다.
 
-### Mesh Renderer
+![5](https://github.com/W298/gvdb-fluid-unreal/assets/25034289/8f300599-289c-4b5a-961e-27b75135ab1e)
+
+`Sprite Renderer` 의 경우 위와 같은 Sprite Material 을 만들어 액체와 비슷한 느낌을 만들었다. 실제 Mesh 를 사용하여 렌더링 하는 것이 아니므로 성능상 이점이 있으나, 실제 유체의 입자와 같은 모습을 표현하기에는 조금 어색한 부분이 있다.  
+
+### Sprite Renderer Example
+
+https://github.com/W298/gvdb-fluid-unreal/assets/25034289/a8b596cd-d4fc-41c9-b544-915ba2ef7fc4
+
+### Mesh Renderer Example
+
+https://github.com/W298/gvdb-fluid-unreal/assets/25034289/9441a4b6-0c21-417a-8b61-5e5a886428a2
