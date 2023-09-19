@@ -1,7 +1,5 @@
 # gvdb-fluid-unreal
 
-## About this repository
-
 https://github.com/W298/gvdb-fluid-unreal/assets/25034289/004b86f1-7cba-49c1-8d4d-353dc54cada2
 
 - [All Demonstration Videos](Demonstration.md)
@@ -9,7 +7,7 @@ https://github.com/W298/gvdb-fluid-unreal/assets/25034289/004b86f1-7cba-49c1-8d4
 Implement Fluid Simulation (FLIP) on Unreal Engine 5 with **NVIDIA GVDB Library**.  
 The particles are simulated with a **Niagara system**. (using Sprite Renderer & Mesh Renderer)
 
-Full Description
+## Descriptions
 
 - [Description-KO](Description-KO.md)
 - [Description-EN](Description-EN.md)
