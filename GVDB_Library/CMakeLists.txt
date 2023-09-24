@@ -107,6 +107,8 @@ target_sources(gvdb
             src/loader_OBJReader.cpp
             src/loader_Parser.cpp
             src/string_helper.cpp
+            src/fluid_emulator.cpp
+            src/fluid_system.cpp
     PUBLIC  "${CMAKE_CURRENT_LIST_DIR}/src/app_perf.h"
             "${CMAKE_CURRENT_LIST_DIR}/src/gvdb.h"
             "${CMAKE_CURRENT_LIST_DIR}/src/gvdb_allocator.h"
@@ -124,7 +126,9 @@ target_sources(gvdb
             "${CMAKE_CURRENT_LIST_DIR}/src/loader_ObjarReader.h"
             "${CMAKE_CURRENT_LIST_DIR}/src/loader_OBJReader.h"
             "${CMAKE_CURRENT_LIST_DIR}/src/loader_Parser.h"
-            "${CMAKE_CURRENT_LIST_DIR}/src/string_helper.h")
+            "${CMAKE_CURRENT_LIST_DIR}/src/string_helper.h"
+            "${CMAKE_CURRENT_LIST_DIR}/src/fluid_emulator.h"
+            "${CMAKE_CURRENT_LIST_DIR}/src/fluid_system.h")
 
 # Export our additional target include directories.
 target_include_directories(gvdb
