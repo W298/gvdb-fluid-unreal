@@ -13,7 +13,7 @@ The particles are simulated with a **Niagara system**. (using Sprite Renderer & 
 - [Description-EN](Description-EN.md)
 - [Description Video](https://youtu.be/mlQzro5T2BA?si=l1DC9oW_6IRNTTYR)
 
-> Reference Paper
+> Reference Paper / Link
 >
 > - [Fast Fluid Simulations with Sparse Volumes on the GPU](https://www.researchgate.net/publication/325488464_Fast_Fluid_Simulations_with_Sparse_Volumes_on_the_GPU)
 > - https://people.csail.mit.edu/kuiwu/gvdb_sim.html
